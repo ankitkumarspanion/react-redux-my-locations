@@ -11,10 +11,7 @@ class Header extends Component {
                         Home
                     </Link>
                 </div>
-                <div className='right menu'>
-                    <Link to='/' className='link'>
-                    </Link>
-                    
+                <div className='right menu'>              
                     <GoogleAuth />
                 </div>
             </div>

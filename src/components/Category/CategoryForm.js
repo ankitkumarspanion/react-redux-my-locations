@@ -15,8 +15,10 @@ class CategoryForm extends Component {
     }
     render() {
         return (
-            <form onSubmit={this.handleSubmit} className="form category=form">
-                <input name="name" onChange={this.handleChange} value={this.props.data.categoryName}/>
+            <form onSubmit={this.handleSubmit} className="form form-row">
+                <input 
+                    name="name" 
+                    placeholder="enter category name" onChange={this.handleChange} value={this.props.data.categoryName}/>
                 <button className="button" >Submit</button>
             </form>
         );

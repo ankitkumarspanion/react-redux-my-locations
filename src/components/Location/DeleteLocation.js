@@ -22,7 +22,10 @@ class DeleteLocation extends Component {
         if(isIdPresent(locations,match.params.id)){
             return (
                 <div className='delete-location'>
-                    <div>
+                    <div className="heading">
+                        Delete Location
+                    </div>
+                    <div className='sure'>
                         Are You sure?
                     </div>
                     <div className='button-group'>

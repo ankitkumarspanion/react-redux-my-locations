@@ -14,7 +14,7 @@ body{
     justify-content: space-between;
 }
 .menu{
-    padding: 15px;
+    padding: 15px 0;
     text-decoration: none;
 }
 .link{
@@ -41,11 +41,12 @@ body{
 
 .button{
     color:#fff;
-    width: 150px;
+    width: 200px;
     font-size: 15px;
     cursor: pointer;    
     padding: 5px 0;
     text-align: center;
+    text-decoration: none;
     transition: 0.4s ease;
     background: #2c2c2c;
     border: none;
@@ -69,7 +70,7 @@ body{
     display: flex;
     justify-content: space-between;
 }
-.item:nth-child(even){
+.item:nth-child(odd){
     background: rgb(206, 206, 206);
 }
 .button-group span{
@@ -83,4 +84,24 @@ body{
 .button-group{
     display: flex;
     justify-content: space-between;
+}
+
+.heading{
+    background: #2c2c2c;
+    color: #fff;
+    padding: 10px;
+    font-size: 15px;
+}
+.form{
+    max-width: 500px;
+    margin: 20px auto;
+}
+.form-row{
+    display: flex;
+    padding: 2px 5px;
+    justify-content: space-between;
+}
+.sure{
+    font-size: 15px;
+    margin: 30px auto
 }

@@ -18,7 +18,9 @@ class LocationView extends Component {
         if(this.props.categories.length > 0){
             return (
                 <div className='location-view'>
-                    Locations
+                    <div className="heading">
+                        Locations
+                    </div>
                     <ItemList list={sortArray(this.props.locations, 'name')} type="locations"/>
                     <div className="add-button">
                         <Button 

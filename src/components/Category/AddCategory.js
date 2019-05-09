@@ -9,6 +9,10 @@ import history from '../../history';
 
 class AddCategory extends Component {
 
+    componentDidMount = () =>{        
+        this.props.updateFormError('');
+    }
+
     onSubmit = (values) =>{
         const {categories} = this.props;
         if(validateCategory(values)){
@@ -30,6 +34,9 @@ class AddCategory extends Component {
     render() {
         return (
             <div className='add-category'>
+                <div className="heading">
+                    Add Category
+                </div>
                 <div>
                     {this.props.error}
                 </div>

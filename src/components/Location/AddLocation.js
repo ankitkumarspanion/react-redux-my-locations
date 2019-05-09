@@ -9,24 +9,31 @@ import history from '../../history';
 
 class AddLocation extends Component {
 
+    componentDidMount = () =>{        
+        this.props.updateFormError('');
+    }
+
     onSubmit = (values) =>{
         const {locations} = this.props;
-        if(!isCoordinatePresent(locations, values.coordinates)){
-            if(validateLocation(values)){
+        if(validateLocation(values)){
+            if(!isCoordinatePresent(locations, values.coordinates)){
                 this.props.addLocation(values);
                 this.props.updateFormError('')
-                history.push('/locations');
             }else{
-                this.props.updateFormError('Error: Fill the form correctly!')
+                alert('Given Coordinates already added!')
             }
+            history.push('/locations');
         }else{
-            alert('Given Coordinates already added!')
+            this.props.updateFormError('Error: Fill the form correctly!')
         }
     }
     render() {
         if(this.props.categories.length > 0){
         return (
             <div className='add-category'>
+                <div className="heading">
+                    Add Location
+                </div>
                 <div>
                     {this.props.error}
                 </div>

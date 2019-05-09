@@ -17,6 +17,10 @@ class LocationForm extends Component {
         if(categories.length > 0){
             this.props.formSelectChange(categories[0].name);
         }
+        this.props.formNameChange('');
+        this.props.formAddressChange('');
+        this.props.formCoordXChange('');
+        this.props.formCoordYChange('');
     }
 
     handleNameChange = (event) =>{
@@ -64,21 +68,41 @@ class LocationForm extends Component {
             <form
                 onSubmit={this.handleSubmit} 
                 className='form location-form'>
-                <div>
-                    <label>Name</label>
-                    <input name="lName" onChange={this.handleNameChange} value={locationName}/>                        
+                <div className="form-row">
+                    <label>Name: </label>
+                    <input 
+                        name="lName"
+                        placeholder='enter location name' 
+                        onChange={this.handleNameChange} 
+                        value={locationName}/>                        
                 </div>
-                <div>
-                    <label>Address</label>
-                    <input name="lAddress" onChange={this.handleAddressChange} value={address}/>
+                <div className="form-row">
+                    <label>Address: </label>
+                    <input 
+                        name="lAddress" 
+                        placeholder='enter location address' 
+                        onChange={this.handleAddressChange} 
+                        value={address}/>
                 </div>
-                <div>
-                    <label>Coordinates</label>
-                    <input name="lCoordX" type='number' onChange={this.handleCoordXChange} value={coordinates.latitude}/>
-                    <input name="lCoordY" type='number' onChange={this.handleCoordYChange} value={coordinates.longitude}/>
+                <div className="form-row">
+                    <label>Coordinates: </label>
+                    <div>
+                        <input 
+                            name="lCoordX" 
+                            type='number' 
+                            placeholder='enter latitude' 
+                            onChange={this.handleCoordXChange} 
+                            value={coordinates.latitude}/>
+                        <input 
+                            name="lCoordY" 
+                            type='number' 
+                            placeholder='enter longitude' 
+                            onChange={this.handleCoordYChange} 
+                            value={coordinates.longitude}/>
+                    </div>
                 </div>
-                <div>
-                    <label>Category</label>
+                <div className="form-row">
+                    <label>Category: </label>
                     <select 
                         name="lCategory"
                         onChange={this.handleSelectChange}>

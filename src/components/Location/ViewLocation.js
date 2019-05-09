@@ -18,7 +18,9 @@ class ViewLocation extends Component {
         history.push(`/map/${coordinates.latitude}/${coordinates.longitude}`);
     }
 
-
+    handleBackClick = () =>{
+        history.push('/locations');
+    }
 
     render() {
         let location = this.getLocation();
@@ -26,20 +28,32 @@ class ViewLocation extends Component {
             const {name, address,coordinates,category } = location;
             return (
                 <div className='view-location'>
-                    <div>
-                        Name: {name}
+                    <div className="heading">
+                        View Location
                     </div>
-                    <div>
-                        Address: {address}
+                    <div className="form">
+                        <div className='form-row'>
+                            <div >Name:</div>
+                            <div>{name}</div>
+                        </div>
+                        <div className='form-row'>
+                            <div >Address:</div>
+                            <div>{address}</div>
+                        </div>
+                        <div className='form-row'>
+                            <div >Coordinates:</div>
+                            <div>Lat. {coordinates.latitude} Lng. {coordinates.longitude}</div>
+                        </div>
+                        <div className='form-row'>
+                            <div >Category:</div>
+                            <div>{category}</div>
+                        </div>
                     </div>
-                    
-                    <div>
-                        Coordinates: <span>{coordinates.latitude}</span> <span>{coordinates.longitude}</span> 
-                    </div>
-                    <div>
-                        Category: {category}
-                    </div>
-                    <div className="right">
+                    <div className="button-group">
+                        <Button 
+                            name='Back'
+                            handleButtonClick={this.handleBackClick}
+                        />
                         <Button 
                             name="View on Map"
                             handleButtonClick={this.onViewMapClick}

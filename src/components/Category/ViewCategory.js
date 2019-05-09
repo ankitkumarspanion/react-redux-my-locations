@@ -6,7 +6,9 @@ class ViewCategory extends Component {
     render() {
         return (
             <div>
-                ViewCategory
+                <div className="heading">
+                    View Category
+                </div>
             </div>
         )
     }

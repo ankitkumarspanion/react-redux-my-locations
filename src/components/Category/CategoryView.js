@@ -17,7 +17,9 @@ class CategoryView extends Component {
     render() {
         return (
             <div className='category-view'>
-                Categories
+                <div className="heading">
+                    Categories
+                </div>
                 <ItemList list={sortArray(this.props.categories, 'name')} type="categories"/>
                 <div className="add-button">
                     <Button 

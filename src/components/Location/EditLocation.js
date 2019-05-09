@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { isIdPresent, validateLocation } from '../../helpers';
+import { isIdPresent, isCoordinatePresent,validateLocation } from '../../helpers';
 
 
 import { editLocation,updateFormError } from '../../actions';
@@ -10,12 +10,21 @@ import history from '../../history';
 
 class EditLocation extends Component {
 
+    componentDidMount = () =>{        
+        this.props.updateFormError('');
+    }
+
     onSubmit = (values) =>{
-        if(validateLocation(values)){
-            this.props.editLocation(values);
-            this.props.updateFormError('')
+        const {locations} = this.props; 
+        
+        if(validateLocation(values)){       
+            if(!isCoordinatePresent(locations, values.coordinates)){
+                this.props.editLocation(values);
+                this.props.updateFormError('');
+            }else{
+                alert('Given Coordinates already added!')
+            }
             history.push('/locations');
-            this.props.updateFormError('')
         }else{
             this.props.updateFormError('Error: Fill the form correctly!')
         }
@@ -25,7 +34,10 @@ class EditLocation extends Component {
         const {locations, match, error} = this.props;
         if(isIdPresent(locations, match.params.id)){
             return (
-                <div className='edit-category'>
+                <div className='edit-location'>
+                    <div className="heading">
+                        Edit Location
+                    </div>
                     <div>
                         {error}
                     </div>

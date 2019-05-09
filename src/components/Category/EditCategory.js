@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import {isIdPresent, validateCategory} from '../../helpers';
+import {isIdPresent,isNamePresent, validateCategory} from '../../helpers';
 import { editCategory,formCategoryNameChange, updateFormError} from '../../actions';
 import CategoryForm from './CategoryForm';
 import history from '../../history';
 
 class EditCategory extends Component {
+
+    componentDidMount = () =>{        
+        this.props.updateFormError('');
+    }
+
     onSubmit = (values) =>{
+        const {categories} = this.props;
         if(validateCategory(values)){
-            this.props.editCategory(values);
-            this.props.formCategoryNameChange('');
+            if(!isNamePresent(categories, values.name)){
+                this.props.editCategory(values);
+                this.props.updateFormError('');
+                this.props.formCategoryNameChange('');
+            }
+            else{
+                alert('given name already exists');
+            }
             history.push('/categories');
-            this.props.updateFormError('');
         }
         else{
             this.props.updateFormError('Error: please enter correct values!');
@@ -25,6 +36,9 @@ class EditCategory extends Component {
         if(isIdPresent(categories, match.params.id)){
             return (
                 <div className='edit-category'>
+                    <div className="heading">
+                        Edit Category
+                    </div>
                     <div>
                         {error}
                     </div>

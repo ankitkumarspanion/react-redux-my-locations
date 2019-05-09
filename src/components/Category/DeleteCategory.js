@@ -22,7 +22,10 @@ class DeleteCategory extends Component {
         if(isIdPresent(categories,match.params.id)){
             return (
                 <div className='delete-category'>
-                    <div>
+                    <div className="heading">
+                        Delete Category
+                    </div>
+                    <div className='sure'>
                         Are You sure?
                     </div>
                     <div className='button-group'>
