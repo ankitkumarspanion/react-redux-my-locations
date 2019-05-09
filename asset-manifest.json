@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-redux-my-locations/static/css/main.8e7adfa4.chunk.css",
+    "main.js": "/react-redux-my-locations/static/js/main.898e3716.chunk.js",
+    "main.js.map": "/react-redux-my-locations/static/js/main.898e3716.chunk.js.map",
+    "runtime~main.js": "/react-redux-my-locations/static/js/runtime~main.d6eac12c.js",
+    "runtime~main.js.map": "/react-redux-my-locations/static/js/runtime~main.d6eac12c.js.map",
+    "static/js/2.8797690f.chunk.js": "/react-redux-my-locations/static/js/2.8797690f.chunk.js",
+    "static/js/2.8797690f.chunk.js.map": "/react-redux-my-locations/static/js/2.8797690f.chunk.js.map",
+    "index.html": "/react-redux-my-locations/index.html",
+    "precache-manifest.bb5557fa687d13a8466ab60ec281e2de.js": "/react-redux-my-locations/precache-manifest.bb5557fa687d13a8466ab60ec281e2de.js",
+    "service-worker.js": "/react-redux-my-locations/service-worker.js",
+    "static/css/main.8e7adfa4.chunk.css.map": "/react-redux-my-locations/static/css/main.8e7adfa4.chunk.css.map"
+  }
+}
