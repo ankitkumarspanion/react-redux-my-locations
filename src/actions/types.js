@@ -1,3 +1,6 @@
+
+export const SIGN_IN = 'SIGN_IN'
+export const SIGN_OUT = 'SIGN_OUT'
 export const ADD_CATEGORY = 'ADD_CATEGORY';
 export const EDIT_CATEGORY = 'EDIT_CATEGORY';
 export const ADD_LOCATION = 'ADD_LOCATION';

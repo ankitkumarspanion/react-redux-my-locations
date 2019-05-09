@@ -1,4 +1,6 @@
 import {
+    SIGN_IN,
+    SIGN_OUT,
     ADD_CATEGORY,
     EDIT_CATEGORY,
     SHOW_CATEGORY,
@@ -14,6 +16,23 @@ import {
     CHANGE_LOCATION_CATEGORY,
     UPDATE_ERROR
 }from '../actions/types';
+
+
+
+export const signIn = (user) => {
+    return{
+        type: SIGN_IN,
+        payload: user
+    }
+}
+
+export const signOut = (user) => {
+    return{
+        type: SIGN_OUT,
+        payload: user
+    }
+}
+
 
 export const addCategory = (data) =>{
     return({

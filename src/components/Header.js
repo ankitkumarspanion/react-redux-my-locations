@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import GoogleAuth from './Auth/GoogleAuth';
 
 class Header extends Component {
     render() {
@@ -12,8 +13,9 @@ class Header extends Component {
                 </div>
                 <div className='right menu'>
                     <Link to='/' className='link'>
-                        Login
                     </Link>
+                    
+                    <GoogleAuth />
                 </div>
             </div>
         );
