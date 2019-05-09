@@ -43,3 +43,7 @@ export const isCoordinatePresent = (arr, coordinates)=>{
     }
     return true;
 }
+
+export const sortArray = (arr, id) =>{
+    return _.sortBy(arr, id);
+}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+
+import {sortArray} from '../../helpers';
 import Button from '../Button';
 import ItemList from '../ItemList';
 
@@ -17,7 +19,7 @@ class LocationView extends Component {
             return (
                 <div className='location-view'>
                     Locations
-                    <ItemList list={this.props.locations} type="locations"/>
+                    <ItemList list={sortArray(this.props.locations, 'name')} type="locations"/>
                     <div className="add-button">
                         <Button 
                             name="Add"

@@ -28,7 +28,6 @@ class AddCategory extends Component {
     }
     
     render() {
-        console.log(this.props.error)
         return (
             <div className='add-category'>
                 <div>

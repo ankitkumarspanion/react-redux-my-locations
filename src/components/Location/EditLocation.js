@@ -15,16 +15,20 @@ class EditLocation extends Component {
             this.props.editLocation(values);
             this.props.updateFormError('')
             history.push('/locations');
+            this.props.updateFormError('')
         }else{
             this.props.updateFormError('Error: Fill the form correctly!')
         }
     }
 
     render() {
-        const {locations, match} = this.props;
+        const {locations, match, error} = this.props;
         if(isIdPresent(locations, match.params.id)){
             return (
                 <div className='edit-category'>
+                    <div>
+                        {error}
+                    </div>
                     <LocationForm 
                         id={this.props.match.params.id}
                         onSubmit={this.onSubmit}/>
@@ -43,7 +47,8 @@ class EditLocation extends Component {
 
 const mapStateToProps = (state)=>{
     return {
-        locations: state.locations
+        locations: state.locations,
+        error: state.formData.error
     }
 }
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+
+import {sortArray} from '../../helpers';
 import Button from '../Button';
 import ItemList from '../ItemList';
 
@@ -16,7 +18,7 @@ class CategoryView extends Component {
         return (
             <div className='category-view'>
                 Categories
-                <ItemList list={this.props.categories} type="categories"/>
+                <ItemList list={sortArray(this.props.categories, 'name')} type="categories"/>
                 <div className="add-button">
                     <Button 
                         name="Add"

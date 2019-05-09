@@ -17,6 +17,7 @@ import './style.css';
 import history from '../history';
 import ViewLocation from './Location/ViewLocation';
 import GoogleMapView from './Map/GoogleMapView';
+import ViewCategory from './Category/ViewCategory';
 
 class App extends Component {
     render() {
@@ -28,6 +29,7 @@ class App extends Component {
                     <Route path='/' exact component={Home} />
                     <Route path='/categories' exact component={CategoryView} />
                     <Route path='/categories/add' exact component={AddCategory} />
+                    <Route path='/categories/view/:id' exact component={ViewCategory} />
                     <Route path='/categories/edit/:id' exact component={EditCategory} />
                     <Route path='/categories/delete/:id' exact component={DeleteCategory} />
                     <Route path='/locations/' exact component={LocationView} />

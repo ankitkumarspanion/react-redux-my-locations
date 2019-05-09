@@ -1,23 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import {isIdPresent} from '../../helpers';
-import { editCategory,formCategoryNameChange } from '../../actions';
+import {isIdPresent, validateCategory} from '../../helpers';
+import { editCategory,formCategoryNameChange, updateFormError} from '../../actions';
 import CategoryForm from './CategoryForm';
 import history from '../../history';
 
 class EditCategory extends Component {
     onSubmit = (values) =>{
-        this.props.editCategory(values);
+        if(validateCategory(values)){
+            this.props.editCategory(values);
+            this.props.formCategoryNameChange('');
+            history.push('/categories');
+            this.props.updateFormError('');
+        }
+        else{
+            this.props.updateFormError('Error: please enter correct values!');
+        }
         this.props.formCategoryNameChange('');
-        history.push('/categories');
     }
 
     render() {
-        const {categories, match} = this.props;
+        const {categories, match, error} = this.props;
         if(isIdPresent(categories, match.params.id)){
             return (
                 <div className='edit-category'>
+                    <div>
+                        {error}
+                    </div>
                     <CategoryForm 
                         id={this.props.match.params.id}
                         onSubmit={this.onSubmit}/>
@@ -35,8 +45,9 @@ class EditCategory extends Component {
 }
 const mapStateToProps = (state)=>{
     return {
-        categories: state.categories
+        categories: state.categories,
+        error: state.formData.error
     }
 }
 
-export default connect(mapStateToProps, {editCategory,formCategoryNameChange})(EditCategory)
+export default connect(mapStateToProps, {editCategory,formCategoryNameChange, updateFormError})(EditCategory)
