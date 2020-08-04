@@ -14,7 +14,7 @@ class ItemList extends Component {
     render() {
         return (
             <div className='item-list'>
-                {this.renderItems()}
+                {this.props.list.length ? this.renderItems():"No items found"}
             </div>
         );
     }

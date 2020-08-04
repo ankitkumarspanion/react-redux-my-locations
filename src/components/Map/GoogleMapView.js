@@ -6,7 +6,7 @@ class GoogleMapView extends Component {
     render() {
         const {lat, lng} = this.props.match.params;
         return (
-            <div className=''>
+            <div>
                 <Map google={this.props.google}
                     style={{width: '900px', height: '90vh'}} 
                     initialCenter={{
