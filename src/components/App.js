@@ -23,7 +23,7 @@ class App extends Component {
     render() {
         return (
             <div className='app'>
-            <Router history={history}>
+            <Router history={history} basename="/react-redux-my-locations">
                 <Header/>
                 <Switch>
                     <Route path='/' exact component={Home} />
